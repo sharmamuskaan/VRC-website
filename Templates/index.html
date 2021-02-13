@@ -1,0 +1,340 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Dr.Anjali Yeole</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+</head>
+<body>
+  <div class="jumbotron--1">
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand logo" href="#"><img src="{% static '2.png'%}" width="55" >J.M Nair</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a href="#Home"><i class="fas fa-home"></i>  | HOME </a></li>
+          <li class="nav-item"><a href="#newAbout"><i class="fas fa-info-circle"></i>  | ABOUT </a></li>
+          <li class="nav-item"><a href="#newEdu"><i class="fas fa-graduation-cap"></i>  | EDUCATION </a></li>
+          <li class="nav-item"><a href="#newBooks"><i class="fas fa-book"></i>  | BOOKS </a></li>
+          <li class="nav-item"><a href="#newAwards"><i class="fas fa-trophy"></i> | AWARDS </a></li>
+          <li class="nav-item"><a href="#newAchievements"><i class="fas fa-star"></i>  | ACHIEVEMENTS </a></li>
+          <li class="nav-item"><a href="#newInteractions"><i class="fas fa-users"></i>  | INTERACTIONS </a></li>
+          <li class="nav-item"><a href="#Contact"><i class="fas fa-id-card"></i>  | CONTACT </a></li>
+        </ul>
+      </div>
+    </nav> 
+    </div>
+    <div class="jumbotron">
+    
+    <!-- Home -->
+    <section id = "Home">
+        <h3><a href="admin"> <button class="staffBtn">Staff Login</button></a></h3>
+        <div class="text-center">
+            <div class="container">
+              <div class="row bubble">
+                <div class="col-lg-6">
+                    <img class="z-image" src="https://scontent.fluh2-1.fna.fbcdn.net/v/t1.0-9/1472081_878967162129647_8862279106816544663_n.jpg?_nc_cat=103&_nc_sid=174925&_nc_ohc=Rd6Duy9htdAAX-X4n3b&_nc_ht=scontent.fluh2-1.fna&oh=382d935be21341d2a6f0945222232801&oe=5EF27AFE" width="70%">
+                  </div>
+                <div class="col-lg-6 text-center" >        
+                  <h1 class="display-4">J.M Nair</h1>
+                  <p id="hometext" class="lead">Assistant Professor , Computer Engg. Department,<br>
+                                Vivekanand Education Society’s Institute Of Technology.<br>
+                                Hashu Advani Memorial Complex, Collector Colony, Chembur East, Mumbai - 400074.</p>
+                  <p id="red">Security &nbsp; IoT &nbsp; Networking</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <div class="container">
+
+          <div class="row text-center align-items-center justify-contents-center">
+            <div class="col-lg-12  col-md-12 col-sm-12">
+
+              <h1>
+                  <div class="tall">
+  <div class="animation-element slide-left" id="newAbout">
+ABOUT  </div></div>
+</h1>
+            </div>
+
+        </div>
+    <!-- About -->
+    <section id="About" style="border-radius:20px;">
+        <div id="date" class="container-fluid">
+          <div class="row align-items-left justify-contents-left">
+              {% for content in about %}
+            <div class="col-lg-3 col-sm-6">
+             <img class="img-fluid" src="{{content.image.url}}" width="10%">
+            </div>
+            <div class="col-9">
+              <div class="row">
+                
+                <div class="col-12">
+                   <p>{{content.description}}</p>
+                </div>
+              </div>
+          </div>
+              {% endfor %}
+        </div>
+      </section>
+  
+    <div class="col-lg-12  col-md-12 col-sm-12">
+            <h1 id="eduMH">
+                <div class="tall">
+  <div id="newEdu" class="animation-element slide-left" >EDUCATION
+  </div></div></h1>
+          </div>
+    <!-- Education -->
+    <section id = "Education" style="border-radius:20px; background:none;">
+
+
+        <div class="row" style="background:none; margin-left:25%;">
+            <div class="feature-box col-lg-4 col-md-4">
+              <h2 style="color:white;">Diploma</h2>
+              <p class="myfont" style="color:white;">Government Polytechnic Pune</p>
+            </div>
+            <div class="feature-box col-lg-4 col-md-4">
+              <h2 style="color:white;">B.Tech,Computer</h2>
+              <p class="myfont" style="color:white;">SNDT Women's University</p>
+            </div>
+            <div class="feature-box col-lg-4 col-md-4">
+              <h2 style="color:white;">M.Tech,Computer</h2>
+              <p class="myfont" style="color:white;">VJTI</p>
+            </div>
+            <div class="feature-box col-lg-4 col-md-4">
+                <h2 style="color:white;">Ph.D in Technology</h2>
+                <p class="myfont" style="color:white;">University of Mumbai</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books -->
+    <section id = "Books" >
+        <div class="BooksH">
+        <h1 >
+            <div class="tall">
+  <div class="animation-element slide-left" id="newBooks">BOOKS
+  </div></div></h1>
+    </div>
+        
+        <div id="carouselExampleInterval" class="carousel slide carousel-color" data-ride="carousel" style="background:none;">
+  <div class="carousel-inner" >
+
+    <div class="carousel-item active" data-interval="2500">
+        <center>
+      <img src="{{book1.picture.url}}" class="d-block w-50 " align="center" alt="..." style="width:70px; height:500px;">
+             <h2 style="background-color:white; border-radius:50%; ">{{book1.name}}    &nbsp;&nbsp;   {{book1.published}}     &nbsp;&nbsp;   <a href="{{book1.buy_link}}"> Buy Book</a></h2>
+
+            </center>
+
+    </div>
+      {% for book in books %}
+      {% if book.name != book1.name %}
+    <div class="carousel-item" data-interval="2500">
+        <center>
+      <img src="{{book.picture.url}}" class="d-block w-50 " align="center" alt="..." style="width:70px; height:500px;">
+                         <h2 style="background-color:white; border-radius:50%;">{{book.name}}   &nbsp;&nbsp;    {{book.published}}  &nbsp;&nbsp;      <a href="{{book.buy_link}}"> Buy Book</a></h2>
+
+            </center>
+    </div>
+      {% endif %}
+      {% endfor %}
+   </div>
+  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </section>
+
+        <h1 id="eduMH">
+            <div class="tall">
+  <div class="animation-element slide-left" id="newAwards">AWARDS AND HONORS
+  </div></div></h1>
+    <!-- Awards -->
+    <section id = "Awards">
+
+    <div class="row">
+        {% for award in awards %}
+      <div class="awards-column col-lg-4 d-flex pb-2 col-md-6">
+        <div class="card" style="border: 3px solid black; border-radius: 20px;">
+        <div class="card-body">
+            <img class="card-img-top" src="{{award.image.url}}" alt="Card image cap">
+            <br><br>
+            <strong><h4><bold>{{award.award}}</bold></h4></strong>
+            <strong><h4>Year:{{award.year}}</h4></strong>
+          <p>{{award.description}}</p>
+        </div>
+        </div>
+      </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+<div class="col-lg-12  col-md-12 col-sm-12">
+
+                            <h1>
+                                <div class="tall">
+  <div class="animation-element slide-left" id="newAchievements">ACHIEVEMENTS
+  </div></div></h1>
+                          </div>
+    <!-- Acheivements -->
+        <section id="Achievements">
+    <div id="Achievements" class="services-mf route sect-pt4 mt-5">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="box-shadow-full">
+                <div class="row" >
+                  <div class="col-sm-12">
+                    <div class="title-box text-center"  >
+
+                      <hr>
+                      <p class="subtitle-a"></p>
+                      <div class="line-mf"></div>
+                     </div>
+                  </div>
+                </div>
+                <div class="tab" >
+                    {% for item in achievementList %}
+                  <button data-category= {{item}} class="btnctn btn-outline-secondary btn-lg">{{item}}</button>
+                    {% endfor %}
+                  </div>
+                <div class="popup">
+                  Hello world!!!!!!!!!
+                </div>
+              </div>
+            </div>
+          </div></div>
+        </section>
+
+
+
+
+    <!-- Interactions -->
+        <div class="col-lg-12  col-md-12 col-sm-12">
+                            <h1>
+                                <div class="tall">
+  <div class="animation-element slide-left" id="newInteractions">INTERACTIONS
+  </div></div></h1>
+                          </div>
+        <section id="Interactions" >
+
+                   <div class="Interaction-block" style="border-radius:20px;">
+                   <div class="container-1">
+                       {% for i in interactions %}
+                    <button data-category='{{i.category}}' class="btnctn btn-outline-dark btn-lg button-1 inter" >{{i.category}}</button>
+                       {% endfor %}
+                   </div>
+                   <div id="myInter" class="Interaction-block-1">
+
+                       <p id="interPara" style="margin-top: 100px">Click on Options Shown</p>
+</div>
+                    </div>
+                     
+        </section>
+
+
+
+
+
+    <!-- Contact -->
+    <section id = "Contact">
+        <div class="container-fluid">
+        <div class="contact-block" style="background:none;">
+        <div class="call-outs-container" >
+            <div class="call-out"style="border-radius:20px; margin-right:20px;">
+              <h1 id="separate" style="color:#3399ff">Contact me</h1>
+              <p>
+                <form method="post" >
+	            {% csrf_token %}
+                {% crispy form %}
+	                <button type="submit" name="save" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+                </p>
+            </div>
+          
+            <div class="call-out" style="border-radius:20px; margin-left:100px;">
+              <h1 id="separate"><center style="color:#3399ff">Get In Touch<br></center></h1>
+
+              <p><h3><center>Dr. Anjali Yeole</center></h3></p>
+              <ul class="contact-list">
+                  <li> <a href="https://www.linkedin.com/in/anjali-yeole-69538055/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i>  Connect on LinkedIn</a> </li>
+                  <br><li><a href="mailto:anjali.yeole@ves.ac.in"><i class="fas fa-envelope"></i>  Send Email</a></li>
+                <br><li><a href="https://www.facebook.com/anjali.yeole.9"><i class="fab fa-facebook-square"></i>  Connect on Facebook</a></li>
+                <br><li><a href="tel: 00919930331315"><i class="fas fa-phone-volume"></i>  Click to call</a></li>
+            </ul>
+              
+            </div>
+          
+          </div>
+          </div>
+        </div>
+
+            <center style="color:white">&copy; Copyright 2018. Designed and Maintained by Aabha, Divya, Muskaan, Omkar, Puneet
+</center>
+    </section>
+        </div>
+    </div>
+
+
+        
+        
+        
+        <script src="{% static 'index.js' %}"></script>
+
+<script type="text/javascript">
+  var $animation_elements = $('.animation-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll', check_if_in_view);
+</script>
+
+</body>
+</html>
